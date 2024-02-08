@@ -1,4 +1,9 @@
 <?php
+
+//問題2: 文字列内の特定の文字をカウントする関数
+//与えられた文字列内で、指定された文字がいくつ含まれているかをカウントするユーザー定義関数countCharacterを作成してください。
+//この関数は、検索する文字列と検索対象の文字を引数として受け取ります。
+
 if (isset($_POST)) {
     $text = isset($_POST['text']) ? $_POST['text'] : '';
     $search = isset($_POST['search']) ? $_POST['search'] : '';

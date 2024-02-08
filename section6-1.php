@@ -4,7 +4,7 @@
 //与えられた2つの数値に対して、その和、差、積、商を計算し、結果を配列として返すユーザー定義関数calculateOperationsを作成してください。
 
 // 変数定義
-$calculateOperations = array();
+$results = array();
 
 if(isset($_POST['num1']) && isset($_POST['num2']) ){
 
@@ -16,12 +16,12 @@ if(isset($_POST['num1']) && isset($_POST['num2']) ){
         $msg = '0は入力できません';
         $error = 'error';
     }else{
-        calc($num1, $num2);
+        calculateOperations($num1, $num2);
     }
 
 }
 
-function calc($num1, $num2){
+function calculateOperations($num1, $num2){
     // 足し算
     $sum = $num1 + $num2;
     // 引き算
@@ -31,10 +31,10 @@ function calc($num1, $num2){
     // 割り算
     $quot = $num1 / $num2;
     
-    global $calculateOperations;
-    array_push($calculateOperations, $sum, $diff, $prod, $quot);
+    global $results;
+    array_push($results, $sum, $diff, $prod, $quot);
 
-    print_r($calculateOperations);
+    print_r($results);
 }
 ?>
 
@@ -63,8 +63,8 @@ function calc($num1, $num2){
 </form>
 
 <h3>結果：(和・差・積・商の順に表示されます)</h3>
-<?php foreach($calculateOperations as $calclate): ?>
-<p><?php echo $calclate; ?></p>
+<?php foreach($results as $result): ?>
+<p><?php echo $result; ?></p>
 <?php endforeach;?>
 
 <style>
