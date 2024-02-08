@@ -16,7 +16,7 @@ if(isset($_POST['num1']) && isset($_POST['num2']) ){
         $msg = '0は入力できません';
         $error = 'error';
     }else{
-        calculateOperations($num1, $num2);
+        $results = calculateOperations($num1, $num2);
     }
 
 }
@@ -31,10 +31,7 @@ function calculateOperations($num1, $num2){
     // 割り算
     $quot = $num1 / $num2;
     
-    global $results;
-    array_push($results, $sum, $diff, $prod, $quot);
-
-    print_r($results);
+    return array($sum, $diff, $prod, $quot);
 }
 ?>
 
