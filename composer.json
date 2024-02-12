@@ -1,0 +1,12 @@
+{
+    "name": "yutaro/mini_test",
+    "autoload": {
+        "psr-4": {
+            "Yutaro\\MiniTest\\": "src/"
+        }
+    },
+    "require": {
+        "monolog/monolog": "^3.5",
+        "guzzlehttp/guzzle": "^7.8"
+    }
+}
