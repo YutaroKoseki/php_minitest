@@ -26,3 +26,6 @@ $user = new Person('saburo', 52);
 $user->introduce();
 
 
+//出力結果：
+
+// Hello, my name is saburo and I am 52 years old.

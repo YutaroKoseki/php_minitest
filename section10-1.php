@@ -20,3 +20,8 @@ $user = new Person('taro', 12);
 var_dump($user);
 
 
+// 出力結果：
+
+//object(Person)[1]
+//  public 'name' => string 'taro' (length=4)
+//  public 'age' => int 12

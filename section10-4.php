@@ -59,3 +59,9 @@ $user2 = new Employee('siro', 38, 'magician');
 echo '<br />';
 
 echo $user2->introduce();
+
+
+// 出力結果：
+
+//Hello, my name is jiro and I am 44 years old.
+//Hello, my name is siro and I am 38 years old.my position is a magician!
