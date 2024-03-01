@@ -40,11 +40,19 @@ trait Logger{
 class File implements Ilog{
     // トレイト呼び出し
     use Logger;
+    // トレイトで定義したメソッドを再利用
+    public function save(){
+        $this->log('ファイルを保存しました！');
+    }
 }
 
 // Userクラス
 class User implements Ilog{
     use Logger;
+
+    public function update(){
+        $this->log('ユーザー情報を更新しました！');
+    }
 }
 
 //=============================================================
@@ -59,8 +67,8 @@ $user = new User();
 //=============================================================
 
 // 特定の処理が行われたテイで。。
-$file->log('ファイルを保存しました！');
-$user->log('ユーザー情報を更新しました！');
+$file->save();
+$user->update();
 
 
 //　出力結果：

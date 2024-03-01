@@ -1,31 +1,25 @@
 <?php
+// トークンを設定
+session_start();
+// uniqid()＋random_bytes()＋trueで現在時刻をもとにした一意な文字列をトークンとして生成
+$token = uniqid(bin2hex(random_bytes(13)), true);
+$_SESSION['token'] = $token;
 
-// [1]
-echo <<<EOD
-1: 親クラス
-2: extends
-3: 子クラス
-EOD;
+?>
 
-// [2]
-class MyClass{
-    protected string $data;
-    public function __construct(string $data){
-        $this->data = $data;
+...
+
+<input type="hidden" name="token" value="<?php print $token?>" />
+
+...
+</form>
+
+→
+
+<?php
+// 判定側
+
+    session_start();
+    if(!iseet($_POST['token']) || $_POST['token'] !== $_SESSION['token']){
+        die('不正なアクセスが行われました');
     }
-
-    public function getData(): string{
-        return $this->data;
-    }
-}
-class Child extends MyClass{
-
-    // オーバーライド
-    public function getData(): string
-    {
-        return '['. parent::getData(). ']';
-    }
-}
-
-$child = new Child('やほほ');
-echo '<br>[2]:'. $child->getData();
